@@ -120,7 +120,8 @@ Metro.DisplayTiles = function(callback) {
 			var el = document.createElement("td");
 			var a = document.createElement("a");
 			a.setAttribute("target", "_blank");
-			a.setAttribute("href", "javascript:void(0)"); 
+			a.setAttribute("href", "javascript:void(0)");
+			a.className = "tileLink"; 
 			var tileElement = document.createElement("div");
 			var div = document.createElement("div");
 			var label = document.createElement("span");
