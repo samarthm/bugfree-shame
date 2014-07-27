@@ -135,7 +135,7 @@ Metro.DisplayTiles = function(callback) {
 			var el = document.createElement("td");
 			var a = document.createElement("a");
 			a.setAttribute("target", "_blank");
-			a.setAttribute("href", "javascript:Metro.OpenApp($(this).attr(\"title\"));");
+			a.setAttribute("href", "javascript:Metro.OpenApp(\""+t.Name+"\");");
 			a.className = "tileLink";
 			var tileElement = document.createElement("div");
 			var div = document.createElement("div");
@@ -165,7 +165,7 @@ Metro.DisplayTiles = function(callback) {
 		
 		group.appendChild(table);
 		
-		Metro.Elements.TileTableRow.appendChild(group);
+		Metro.Elements.TileTable.appendChild(group);
 	}
 	Metro.TotalTiles = tileN;
 	callback();
