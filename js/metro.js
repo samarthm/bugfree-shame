@@ -208,15 +208,16 @@ Metro.ShowTiles = function() {
 	}
 };
 
+$("#close-btn").click(function() {
+	Metro.CloseApp();
+});
+$("#profile-link, #profile tr td").click(function() {
+	Metro.OpenApp("Contact");
+});
+
 Metro.InitializeMetro(function() {
 	console.log("Done initializing.");
 	$(document).ready(function() {
-		$("#close-btn").click(function() {
-			Metro.CloseApp();
-		});
-		$("#profile-link").click(function() {
-			Metro.OpenApp("Contact");
-		});
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
 		console.dir(Metro);
