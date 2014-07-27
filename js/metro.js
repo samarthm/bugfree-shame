@@ -127,7 +127,7 @@ Metro.DisplayTiles = function(callback) {
 			el.setAttribute("title", t.Name);
 			div.className = "tileDiv";
 			div.style.backgroundColor = t.Color;
-			div.style.backgroundImage = "url(images/icons/"+t.Icon+")";
+			if (t.Icon.length>0) div.style.backgroundImage = "url(images/icons/"+t.Icon+")";
 			div.style.backgroundSize = "cover";
 			label.className = "label";
 			label.innerHTML = t.Name;
