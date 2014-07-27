@@ -214,6 +214,9 @@ Metro.InitializeMetro(function() {
 		$("#close-btn").click(function() {
 			Metro.CloseApp();
 		});
+		$("#profile-link").click(function() {
+			Metro.OpenApp("Contact");
+		});
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
 		console.dir(Metro);
