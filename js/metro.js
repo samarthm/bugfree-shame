@@ -15,6 +15,7 @@ Metro.GetElements = function() {
 	
 	Metro.Elements.Wrapper = document.getElementById("wrapper");
 	Metro.Elements.TileTable = document.getElementById("tiles");
+	Metro.Elements.TileTableRow = document.getElementById("tilesRow");
 };
 
 Metro.OverrideRightClick = function() {
@@ -30,17 +31,28 @@ Metro.OverrideRightClick = function() {
 };
 
 Metro.OpenApp = function(Name) {
-	$("#mask2").fadeIn("fast");
-	$("#wrapper").addClass("moved");
-	setTimeout(function() {
-		$("#app-page").addClass("opened");
-		setTimeout(function() {
-			$("#app-page").removeClass("closed");
-		}, 300);
-	}, 600);
+	$("#app-content").html("");
+	$.ajax({
+		url: "subpages/" + Name + ".html",
+		dataType: "html",
+		data: {},
+		type: "GET",
+		success: function(content) {
+			$("#app-content").html(content);
+			$("#mask2").fadeIn("fast");
+			$("#wrapper").addClass("moved");
+			setTimeout(function() {
+				$("#app-page").addClass("opened");
+				setTimeout(function() {
+					$("#app-page").removeClass("closed");
+				}, 300);
+			}, 600);
+		},
+	});
 };
 
 Metro.CloseApp = function() {
+	$("#app-content").html("");
 	$("#app-page").addClass("closed");
 	setTimeout(function() {
 		$("#app-page").removeClass("opened");
@@ -150,7 +162,7 @@ Metro.DisplayTiles = function(callback) {
 		
 		group.appendChild(table);
 		
-		Metro.Elements.TileTable.appendChild(group);
+		Metro.Elements.TileTableRow.appendChild(group);
 	}
 	Metro.TotalTiles = tileN;
 	callback();
