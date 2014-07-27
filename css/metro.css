@@ -1,0 +1,251 @@
+@import url(fonts.css);
+
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	cursor:default;
+	
+	/*border:1px solid #F00;*/
+}
+
+body {
+	background-color:#000;
+	overflow:hidden;
+}
+
+#wrapper {
+	width:100%;
+	height:100%;
+	z-index:150;
+	position:absolute;
+	top:0px;
+	left:0px;
+	box-sizing:border-box;
+	transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+#wrapper * {
+	font-family: "Segoe UI Light", sans-serif;
+}
+
+.moved {
+	transform:perspective(1000px) translateZ(-40px) rotateX(10deg);
+	-o-transform:perspective(1000px) translateZ(-40px) rotateX(10deg);
+	-ms-transform:perspective(1000px) translateZ(-40px) rotateX(10deg);
+	-moz-transform:perspective(1000px) translateZ(-40px) rotateX(10deg);
+	-webkit-transform:perspective(1000px) translateZ(-40px) rotateX(10deg);
+}
+
+#wrapper #background-image {
+	width:100%;
+	height:100%;
+	z-index:50;
+	position:fixed;
+	top:0px;
+	left:0px;
+}
+
+#wrapper #background-image-overlay {
+	width:100%;
+	height:100%;
+	z-index:51;
+	position:fixed;
+	top:0px;
+	left:0px;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+#wrapper #container {
+	width:100%;
+	height:100%;
+	z-index:100;
+	padding:50px 0px;
+	/* background-color:rgba(255,255,255,0.5); */
+	position:relative;
+	top:0px;
+	left:0px;
+}
+
+#wrapper #container #header-container {
+	width:100%;
+	padding:0px 100px;
+	margin-bottom:40px;
+}
+
+#wrapper #container table#header {
+	position:relative;
+	table-layout:fixed;
+	color:#FFFFFF;
+	width:100%;
+}
+
+#wrapper #container table#header table#profile {
+	float:right;
+	transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	transform:perspective(500px) translateZ(0px);
+	-o-transform:perspective(500px) translateZ(0px);
+	-ms-transform:perspective(500px) translateZ(0px);
+	-moz-transform:perspective(500px) translateZ(0px);
+	-webkit-transform:perspective(500px) translateZ(0px);
+}
+
+#wrapper #container table#header table#profile:hover {
+	background-color:rgba(255,255,255,0.5);
+}
+
+#wrapper #container table#header table#profile:active {
+	transform:perspective(500px) translateZ(-20px);
+	-o-transform:perspective(500px) translateZ(-20px);
+	-ms-transform:perspective(500px) translateZ(-20px);
+	-moz-transform:perspective(500px) translateZ(-20px);
+	-webkit-transform:perspective(500px) translateZ(-20px);
+	background-color:rgba(255,255,255,0.5);
+}
+
+#wrapper #container table#header table#profile tr td {
+	padding:2px 12px;
+}
+
+#wrapper #container table#header table#profile #first-name {
+	font-size:25pt;
+	vertical-align:bottom;
+}
+#wrapper #container table#header table#profile #last-name {
+	font-size:13pt;
+	vertical-align:top;
+}
+
+#wrapper #container table#header table#profile img#profile-image {
+	width:65px;
+	height:65px;
+	vertical-align:middle;
+}
+
+#wrapper #container table#header tr td h1#start-text {
+	font-size:30pt;
+}
+
+#wrapper #container table#tiles {
+	table-layout:fixed;
+	color:#FFFFFF;
+	padding:0px 100px;
+	overflow-x:scroll;
+}
+
+#wrapper #container table#tiles th {
+	font-weight:normal;
+	font-size:20pt;
+	text-align:left;
+}
+
+.tile {
+	width:150px;
+	height:150px;
+	border:none;
+	position:relative;
+	margin:5px;
+	padding:4px;
+	transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	transform:perspective(500px) translateZ(0px);
+	-o-transform:perspective(500px) translateZ(0px);
+	-ms-transform:perspective(500px) translateZ(0px);
+	-moz-transform:perspective(500px) translateZ(0px);
+	-webkit-transform:perspective(500px) translateZ(0px);
+	left:-30px;
+	opacity:0.0;
+}
+
+.tile:hover {
+	background-color:rgba(255,255,255,0.5);
+}
+
+.tile:active {
+	background-color:rgba(255,255,255,0.5);
+	transform:perspective(500px) translateZ(-20px);
+	-o-transform:perspective(500px) translateZ(-20px);
+	-ms-transform:perspective(500px) translateZ(-20px);
+	-moz-transform:perspective(500px) translateZ(-20px);
+	-webkit-transform:perspective(500px) translateZ(-20px);
+}
+
+.tile .tileDiv {
+	width:100%;
+	height:100%;
+	position:relative;
+}
+
+.tile .tileDiv .label {
+	position:absolute;
+	bottom:15px;
+	left:25px;
+}
+
+#mask {
+	width:100%;
+	height:100%;
+	z-index:/* over */900/*0*/;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#000;
+}
+
+#mask {
+	width:100%;
+	height:100%;
+	z-index:901;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:rgba(0,0,0,0.3);
+	display:none;
+}
+
+#app-page {
+	width:100%;
+	height:100%;
+	z-index:1000;
+	position:fixed;
+	left:0px;
+	background-color:#FFF;
+	transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.closed {
+	top:125%;
+	transform:perspective(1000px) translateZ(-30px) rotateX(5deg);
+	-o-transform:perspective(1000px) translateZ(-30px) rotateX(5deg);
+	-ms-transform:perspective(1000px) translateZ(-30px) rotateX(5deg);
+	-moz-transform:perspective(1000px) translateZ(-30px) rotateX(5deg);
+	-webkit-transform:perspective(1000px) translateZ(-30px) rotateX(5deg);
+}
+
+.opened {
+	top:0px;
+	transform:perspective(0px) translateZ(0px) rotateX(0px);
+	-o-transform:perspective(0px) translateZ(0px) rotateX(0px);
+	-ms-transform:perspective(0px) translateZ(0px) rotateX(0px);
+	-moz-transform:perspective(0px) translateZ(0px) rotateX(0px);
+	-webkit-transform:perspective(0px) translateZ(0px) rotateX(0px);
+}

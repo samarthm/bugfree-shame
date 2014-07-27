@@ -1,0 +1,26 @@
+[
+	{
+		"Name": "About",
+		"Icon": "about.png",
+		"Live": {
+			"is_live": false
+		},
+		"Color": "#0066CC"
+	},
+	{
+		"Name": "Projects",
+		"Icon": "",
+		"Live": {
+			"is_live": false
+		},
+		"Color": "#33AA33"
+	},
+	{
+		"Name": "Languages",
+		"Icon": "",
+		"Live": {
+			"is_live": false
+		},
+		"Color": "#9933CC"
+	}
+]
