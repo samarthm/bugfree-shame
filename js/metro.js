@@ -120,7 +120,7 @@ Metro.DisplayTiles = function(callback) {
 			var el = document.createElement("td");
 			var a = document.createElement("a");
 			a.setAttribute("target", "_blank");
-			a.setAttribute("href", "javascript:void(0);");
+			a.setAttribute("href", "javascript:Metro.OpenApp($(this).attr(\"title\"));");
 			a.className = "tileLink";
 			var tileElement = document.createElement("div");
 			var div = document.createElement("div");
@@ -133,7 +133,6 @@ Metro.DisplayTiles = function(callback) {
 			div.style.backgroundColor = t.Color;
 			if (t.Icon.length>0) div.style.backgroundImage = "url(images/icons/"+t.Icon+")";
 			if (t.Link.length>0) a.setAttribute("href", t.Link);
-			else el.setAttribute("random_attribute", "true");
 			div.style.backgroundSize = "cover";
 			label.className = "label";
 			label.innerHTML = t.Name;
@@ -195,9 +194,6 @@ Metro.ShowTiles = function() {
 Metro.InitializeMetro(function() {
 	console.log("Done initializing.");
 	$(document).ready(function() {
-		$(".tileTD").click(function() {
-			if ($(this).attr("random_attribute")=="true") Metro.OpenApp($(this).attr("title"));
-		});
 		$("#close-btn").click(function() {
 			Metro.CloseApp();
 		});
