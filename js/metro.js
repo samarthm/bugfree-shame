@@ -56,8 +56,8 @@ Metro.LoadTiles = function(callback) {
 	
 	$.ajax({
 		url: "data/tiles.json",
-		dataType: "json",
-		type: "POST",
+		dataType: "jsonp",
+		type: "GET",
 		success: function(content) {
 			for(var i=0;i<content.length;i++) {
 				var tile = new Metro.Tile();
@@ -79,8 +79,8 @@ Metro.LoadTileGroups = function(callback) {
 	
 	$.ajax({
 		url: "data/tile-groups.json",
-		dataType: "json",
-		type: "POST",
+		dataType: "jsonp",
+		type: "GET",
 		success: function(content) {
 			for(var i=0;i<content.length;i++) {
 				var tile = new Metro.TileGroup();
