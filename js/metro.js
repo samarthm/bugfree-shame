@@ -32,7 +32,15 @@ Metro.OverrideRightClick = function() {
 
 Metro.OpenApp = function(Name) {
 	console.log("Opening page " + Name + ".html");
-	$("#app-content").html("");
+	$("#app-content").html("Loading page...");
+	$("#mask2").fadeIn("fast");
+	$("#wrapper").addClass("moved");
+	setTimeout(function() {
+		$("#app-page").addClass("opened");
+		setTimeout(function() {
+			$("#app-page").removeClass("closed");
+		}, 300);
+	}, 600);
 	$.ajax({
 		url: "subpages/" + Name + ".html",
 		dataType: "html",
@@ -41,16 +49,10 @@ Metro.OpenApp = function(Name) {
 		success: function(content) {
 			$("#app-content").html(content);
 			console.log ("Loaded.");
-			console.log (content);
-			$("#mask2").fadeIn("fast");
-			$("#wrapper").addClass("moved");
-			setTimeout(function() {
-				$("#app-page").addClass("opened");
-				setTimeout(function() {
-					$("#app-page").removeClass("closed");
-				}, 300);
-			}, 600);
 		},
+		error: function() {
+			$("#app-content").html("Page not found.");
+		}
 	});
 };
 
