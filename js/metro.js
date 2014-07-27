@@ -31,6 +31,7 @@ Metro.OverrideRightClick = function() {
 };
 
 Metro.OpenApp = function(Name) {
+	console.log("Opening page " + Name + ".html");
 	$("#app-content").html("");
 	$.ajax({
 		url: "subpages/" + Name + ".html",
@@ -39,6 +40,8 @@ Metro.OpenApp = function(Name) {
 		type: "GET",
 		success: function(content) {
 			$("#app-content").html(content);
+			console.log ("Loaded.");
+			console.log (content);
 			$("#mask2").fadeIn("fast");
 			$("#wrapper").addClass("moved");
 			setTimeout(function() {
