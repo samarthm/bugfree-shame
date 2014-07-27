@@ -273,8 +273,6 @@ a.tileLink {
 	-ms-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	-moz-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	-webkit-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	border-radius:5px;
-	-moz-border-radius:5px;
 	transform:perspective(500px) translateZ(0px);
 	-o-transform:perspective(500px) translateZ(0px);
 	-ms-transform:perspective(500px) translateZ(0px);
@@ -283,7 +281,7 @@ a.tileLink {
 }
 
 #app-page #close-btn:hover {
-	background-color:rgba(0,0,255,0.5);
+	background-color:rgba(0,227,255,0.5);
 }
 
 #app-page #close-btn:active {
