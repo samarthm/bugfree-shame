@@ -191,6 +191,9 @@ Metro.InitializeMetro(function() {
 		$(".tileTD").click(function() {
 			Metro.OpenApp($(this).attr("title"));
 		});
+		$("#close-btn").click(function() {
+			Metro.CloseApp();
+		});
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
 		console.dir(Metro);
