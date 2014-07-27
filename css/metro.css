@@ -275,11 +275,23 @@ a.tileLink {
 	-webkit-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	border-radius:5px;
 	-moz-border-radius:5px;
+	transform:perspective(500px) translateZ(0px);
+	-o-transform:perspective(500px) translateZ(0px);
+	-ms-transform:perspective(500px) translateZ(0px);
+	-moz-transform:perspective(500px) translateZ(0px);
+	-webkit-transform:perspective(500px) translateZ(0px);
 }
 
 #app-page #close-btn:hover {
-	background-color:#EEE;
-	box-shadow:0px 2px 3px rgba(0,0,0,0.75);
+	background-color:rgba(0,0,255,0.5);
+}
+
+#app-page #close-btn:active {
+	transform:perspective(500px) translateZ(-20px);
+	-o-transform:perspective(500px) translateZ(-20px);
+	-ms-transform:perspective(500px) translateZ(-20px);
+	-moz-transform:perspective(500px) translateZ(-20px);
+	-webkit-transform:perspective(500px) translateZ(-20px);
 }
 
 #app-page #app-content {
