@@ -1,0 +1,87 @@
+<!--
+
+(c) 2014 Michael Zhang
+
+-->
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prime</title>
+
+<meta name="keywords" content="prime number game github michael zhang project nebula fail failed failedxyz" />
+<meta name="description" content="Challenge your skill and your luck with this prime number game!" />
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/score.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!-- STYLES -->
+<link rel="stylesheet" href="css/font.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/game.css" />
+
+</head>
+
+<body>
+
+<!-- hope this doesn't lag the page too much -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="content">
+
+	<div id="board">
+	</div>
+	<div id="board-overlay">
+		<img src="images/spacer.png" class="spacer" />
+		<span class="h1">Game Over</span>
+		<img src="images/spacer.png" class="spacer" />
+	</div>
+	<div id="stats">
+		<div id="level">Level 1</div>
+		<div id="meter">
+			<div id="meterFill"><div id="score">0</div></div>
+		</div>
+		
+		<div id="instructions">
+			<h3>How to Play</h3>
+			<p>
+				Use your <b style="color:#06F">ARROW KEYS</b> to move around. Dodge the <b style="color:#900;">ENEMY</b>. When you hit the <b style="color:#06F">SPACE BAR</b> when you're on a <b style="color:#090;">PRIME NUMBER</b>, you score points!
+			</p>
+		</div>
+		
+		<div>&copy; 2014 by Michael Zhang.</div>
+		<div>
+			<div class="fb-share-button" data-href="http://failedxyz.github.io/prime/" data-type="button_count"></div>
+		</div>
+		
+		<!-- todo public scoreboard hosted on projectnebula.org -->
+	</div>
+	<div id="scores">
+		<div id="score-0" class="score-block"></div>
+		<div id="score-1" class="score-block"></div>
+		<div id="score-2" class="score-block"></div>
+		<div id="score-3" class="score-block"></div>
+		<div id="score-4" class="score-block"></div>
+	</div>
+
+</div>
+<div id="pause-overlay">
+	<!-- to center the pause text -->
+	<img src="images/spacer.png" class="spacer" />
+	<span class="h1">Paused</span>
+	<img src="images/spacer.png" class="spacer" />
+</div>
+
+</body>
+</html>

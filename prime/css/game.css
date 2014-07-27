@@ -1,0 +1,93 @@
+#player {
+	color:#FFF;
+	background-color:rgba(0,150,0,0.5);
+}
+#enemy {
+	color:#FFF;
+	background-color:rgba(150,0,0,0.5);
+}
+.circle {
+	margin:auto;
+	display:table;
+	vertical-align:middle;
+	border-radius:1000px;
+	font-size:24pt;
+}
+#meter {
+	position:relative;
+	width:100%;
+	height:40px;
+	
+	border-radius:10px;
+	background-color:#999;
+	box-shadow:inset 0px 5px 15px rgba(0,0,0,0.5);
+}
+#meterFill {
+	z-index:18;
+	width:0%;
+	height:40px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	
+	border-radius:10px;
+	background-color:#3A3;
+	box-shadow:inset 0px 3px 5px rgba(0,0,0,0.3);
+	
+	transition:0.3s all ease-out;
+	-o-transition:0.3s all ease-out;
+	-ms-transition:0.3s all ease-out;
+	-moz-transition:0.3s all ease-out;
+	-webkit-transition:0.3s all ease-out;
+}
+#score {
+	width:100%;
+	height:!00%;
+	text-align:center;
+	color:#FFF;
+	padding:10px;
+	z-index:22;
+}
+#level {
+	text-align:center;
+}
+.score-block {
+	width:100%;
+	height:18%;
+	position:relative;
+	
+	margin-bottom:2%;
+	
+	border-radius:10px;
+	background-color:#CCC;
+	box-shadow:inset 0px 5px 15px rgba(0,0,0,0.5);
+}
+.score-fill {
+	display:block;
+	z-index:30;
+	position:absolute;
+	top:0px;
+	left:0px;
+	
+	width:100%;
+	height:100%;
+	background-color:rgba(238,238,238,0.5);
+	
+	padding:15px;
+	border-radius:10px;
+	box-shadow:inset 0px 3px 5px rgba(0,0,0,0.3);
+}
+.first {
+	background-color:rgba(238,238,238,0.8);
+}
+.you {
+	background-color:rgba(51,170,51,0.8);
+}
+.score-fill .name {
+	display:block;
+	font-size:24pt;
+}
+.score-fill .name .place {
+	display:inline;
+	font-size:28pt;
+}
