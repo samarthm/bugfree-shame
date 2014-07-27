@@ -2,17 +2,19 @@
 	{
 		"Name": "About",
 		"Icon": "about.png",
-		"Live": {
-			"is_live": false
-		},
-		"Color": "#0066CC"
+		"Color": "#0066CC",
+		"Link": ""
 	},
 	{
 		"Name": "Languages",
 		"Icon": "",
-		"Live": {
-			"is_live": false
-		},
-		"Color": "#9933CC"
+		"Color": "#9933CC",
+		"Link": ""
+	},
+	{
+		"Name": "Prime",
+		"Icon": "",
+		"Color": "#33AA33",
+		"Link": "http://failedxyz.github.io/prime"
 	}
 ]

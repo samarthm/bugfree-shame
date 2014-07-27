@@ -118,6 +118,9 @@ Metro.DisplayTiles = function(callback) {
 		for(var j=0;j<tile.Tiles.length;j++) {
 			var t = Metro.Tiles[tile.Tiles[j]];
 			var el = document.createElement("td");
+			var a = document.createElement("a");
+			a.setAttribute("target", "_blank");
+			a.setAttribute("href", "javascript:void(0)"); 
 			var tileElement = document.createElement("div");
 			var div = document.createElement("div");
 			var label = document.createElement("span");
@@ -128,12 +131,14 @@ Metro.DisplayTiles = function(callback) {
 			div.className = "tileDiv";
 			div.style.backgroundColor = t.Color;
 			if (t.Icon.length>0) div.style.backgroundImage = "url(images/icons/"+t.Icon+")";
+			if (t.Link.length>0) a.setAttribute("href", t.Link);
 			div.style.backgroundSize = "cover";
 			label.className = "label";
 			label.innerHTML = t.Name;
 			div.appendChild(label);
 			tileElement.appendChild(div);
-			el.appendChild(tileElement);
+			a.appendChild(tileElement);
+			el.appendChild(a);
 			rows[rowCounter%rows.length].appendChild(el);
 			rowCounter += 1;
 			tileN += 1;
