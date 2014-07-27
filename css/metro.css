@@ -289,6 +289,7 @@ a.tileLink {
 	background-color:rgba(0,0,0,0.01);
 	border:1px dotted rgba(0,0,0,0.5);
 	padding:15px;
+	overflow-y: scroll;
 }
 
 #app-content, #app-content * {
@@ -297,6 +298,7 @@ a.tileLink {
 
 #app-content a {
 	color:#0066CC;
+	text-decoration:none;
 	transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	-o-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	-ms-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
