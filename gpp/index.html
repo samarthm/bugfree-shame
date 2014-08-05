@@ -13,6 +13,9 @@
             margin-left:10%;
             margin-right:10%;
         }
+        body {
+            overflow-y: scroll;
+        }
         </style>
     </head>
     <body>
@@ -28,8 +31,8 @@
                         </center>
                         <div class="row">
                             <center>
-                                <form action="index.html" method="get">
-                                    <div class="col-md-5 col-md-offset-3"><input type="text" class="form-control" placeholder="@username" /></div>
+                                <form action="javascript:startAnalysis();">
+                                    <div class="col-md-5 col-md-offset-3"><input type="text" id="githubusername" class="form-control" placeholder="@username" autocomplete="off" /></div>
                                     <div class="col-md-1"><input type="submit" class="btn btn-primary" value="Calculate" /></div>
                                 </form>
                             </center>
@@ -39,12 +42,34 @@
             </section>
         <div class="wrapper">
             <section>
+                <div class="panel panel-default" id="resultspanel" style="display:none;">
+                    <div class="panel-heading">
+                        <div class="panel-title">Results</div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Loading...</p>
+                    </div>
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="panel-title">What are Performance Points?</div>
                     </div>
                     <div class="panel-body">
-                        Performance Points (PP) is a ranking metric that reads your information and compiles your Github history into a score. Obviously, this is just a rough estimate and cannot accurately compare you with other people, but it's close. We'll try our best to use the data available to us from the Github API to appropriately represent your performance on Github.
+                        <p>Performance Points (PP) is a ranking metric that reads your information and compiles your Github history into a score. Obviously, this is just a rough estimate and cannot accurately compare you with other people, but it's close. We'll try our best to use the data available to us from the Github API to appropriately represent your performance on Github.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">How are Performance Points calculated?</div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Performance Points (PP) are calculated by looking at your performance in the following categories:</p>
+                        <ul>
+                            <li>The frequency of your commits</li>
+                            <li>Reception of your public repositories</li>
+                            <li>The popularity of your Gists</li>
+                        </ul>
+                        <p>These calculations are made for each of your repositories and then combined in such a way that will emphasize your best repositories while still acknowledging your other repositories. This means that more repositories or gists doesn't necessarily raise your performance points.</p>
                     </div>
                 </div>
             </section>
@@ -52,5 +77,15 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript">
+            var startAnalysis = function() {
+                $("#resultspanel").slideUp(800, function() {
+                    var username = document.getElementById("githubusername").value;
+                    $("#resultspanel .panel-title").html("Results for <span class='text-success'>" + username + "</span>");
+                    $("#resultspanel").slideDown(800);
+                });
+            };
+        </script>
     </body>
 </html>
