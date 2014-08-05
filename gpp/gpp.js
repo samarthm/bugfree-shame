@@ -4,12 +4,12 @@ PP.Data.Repo = {};
 
 PP.User = "";
 
+PP.Score = {};
+PP.Score.Repo = [];
+
 PP.GithubAPI = {};
 PP.GithubAPI.ClientID = "4d423a457f60a3990290";
 PP.GithubAPI.ClientSecret = "aaf889f63552fb52837a29489764895961ea3d8d";
-
-PP.Score = {};
-PP.Score.Repo = [];
 
 PP.FetchUserData = function(callback) {
     var thing = $.get("https://api.github.com/users/" + PP.User + "?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret, function(data) {
@@ -40,9 +40,19 @@ PP.CalculateRepoPP = function() {
 };
 
 PP.StartAnalysis = function() {
+    PP.Data = {};
+    PP.Data.User = {};
+    PP.Data.Repo = {};
+
+    PP.User = "";
+
+    PP.Score = {};
+    PP.Score.Repo = [];
+
     if ($("#githubusername").val().length <= 0) {
         $("#githubusername").val("failedxyz");
     }
+    
     $("#results").html("<p>Loading...</p>");
     $("#resultspanel").slideUp("slow", function() {
         var username = document.getElementById("githubusername").value;
