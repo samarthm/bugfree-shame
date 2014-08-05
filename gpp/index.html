@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Github PP - Bringing a competitive edge to Github</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+        .wrapper {
+            margin-left:10%;
+            margin-right:10%;
+        }
+        </style>
+    </head>
+    <body>
+            <section>
+                <div class="page-container">
+                    <div class="jumbotron page-title">
+                        <center>
+                            <h2>Github Performance Points</h2>
+                            Based on <a href="http://osu.ppy.sh/wiki/Performance_Points" target="_blank">osu! pp</a>
+                            
+                            <p>&nbsp;</p>
+                            <p>How much pp do you have?</p>
+                        </center>
+                        <div class="row">
+                            <center>
+                                <form action="index.html" method="get">
+                                    <div class="col-md-5 col-md-offset-3"><input type="text" class="form-control" placeholder="@username" /></div>
+                                    <div class="col-md-1"><input type="submit" class="btn btn-primary" value="Calculate" /></div>
+                                </form>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <div class="wrapper">
+            <section>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">What are Performance Points?</div>
+                    </div>
+                    <div class="panel-body">
+                        Performance Points (PP) is a ranking metric that reads your information and compiles your Github history into a score. Obviously, this is just a rough estimate and cannot accurately compare you with other people, but it's close. We'll try our best to use the data available to us from the Github API to appropriately represent your performance on Github.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
