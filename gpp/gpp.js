@@ -27,16 +27,27 @@ PP.FetchRepoData = function(callback) {
     }, "jsonp");
 };
 
-PP.CalculateRepoPP = function() {
+PP.CalculateRepoPP = function(callback) {
+    var promises = [];
     for(var i=0;i<PP.Data.Repo.data.length;i++) {
         var obj = PP.Data.Repo.data[i];
         var res = {};
         
-        res.name = obj.name;
-        res.commits = 0;
-        
-        PP.Score.Repo.push(res);
+        $("#results").append("<p><span class='label label-warning'>WORKING</span> Fetching \"" + PP.Data.Repo.data[i].name + "\" data...</p>");
+        var thing = $.get("https://api.github.com/repos/" + PP.User + "/" + PP.Data.Repo.data[i].name + "/stats/commit_activity?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret, function(data) {
+            
+            res.name = obj.name;
+            res.commits = 0;
+
+            PP.Score.Repo.push(res);
+            $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
+            
+        }, "jsonp");
+        promises.push(thing);
     }
+    $.when.apply(null, promises).done(function() {
+        callback();
+    });
 };
 
 PP.StartAnalysis = function() {
@@ -65,14 +76,14 @@ PP.StartAnalysis = function() {
                 $("#resultspanel .panel-title").html("Results for <span class='text-success' title='" + PP.User + "'>" + PP.Data.User.data.name + "</span>");
             }
             PP.FetchRepoData(function() {
-                console.dir(PP.Data.Repo);
-                PP.CalculateRepoPP();
-                var RepoPPTable = "<div class='col-md-7'><ul class='list-group'>";
-                for(var i=0;i<PP.Score.Repo.length;i++) {
-                    RepoPPTable += "<li class='list-group-item'>" + PP.Score.Repo[i].name + " " + PP.Score.Repo[i].commits + "</li>";
-                }
-                RepoPPTable += "</ul></div>";
-                $("#results").append(RepoPPTable);
+                PP.CalculateRepoPP(function() {
+                    var RepoPPTable = "<div class='col-md-7'><ul class='list-group'>";
+                    for(var i=0;i<PP.Score.Repo.length;i++) {
+                        RepoPPTable += "<li class='list-group-item'>" + PP.Score.Repo[i].name + " " + PP.Score.Repo[i].commits + "</li>";
+                    }
+                    RepoPPTable += "</ul></div>";
+                    $("#results").append(RepoPPTable);
+                });
             });
         });
     });
