@@ -37,32 +37,80 @@ PP.CalculateRepoPP = function(callback) {
         // $("#results").append("<p><span class='label label-warning'>WORKING</span> Fetching \"" + PP.Data.Repo.data[i].name + "\" data...</p>");
         var thing = $.ajax({
             url: "https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret,
-            success: function(data) {
-                var obj = PP.Data.Repo.data[i];
-                var res = {};
-                console.dir(data);
-                
-                var total = 0;
-                var total_authors = data.length;
-                for(var j=0;j<total_authors;j++) {
-                    if (data[j].author.login == PP.User) {
-                        total += data[j].total;
-                        break;
-                    }
-                }
-
-                res.name = obj.name;
-                res.commits = total;
-
-                PP.Score.Repo.push(res);
-                // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
-            },
             dataType: "json",
-            async: false
+            async: false,
+            success: function(data) {
+                if (data == undefined) {
+                    console.error("something fucked up with " + PP.Data.Repo.data[i].full_name);
+                } else {
+                    var obj = PP.Data.Repo.data[i];
+                    var res = {};
+                    console.log("https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret);
+                    console.dir(data);
+
+                    var total = 0;
+                    var total_authors = data.length;
+                    for(var j=0;j<total_authors;j++) {
+                        if (data[j].author.login == PP.User) {
+                            total += data[j].total;
+                            break;
+                        }
+                    }
+
+                    res.start = parseInt(data[0].weeks[0].w);
+
+                    var now = (new Date()).getTime()/1000;
+                    res.elapsed = Math.round(now - res.start);
+
+                    res.name = obj.name;
+                    res.commits = total;
+
+                    res.RawScore = 1.0 * res.commits / res.elapsed;
+
+                    PP.Score.Repo.push(res);
+                    // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
+                }
+            },
+            error: function() {
+                console.error("something fucked up with " + PP.Data.Repo.data[i].full_name);
+            },
         });
         promises.push(thing);
     }
     $.when.apply(null, promises).done(function() {
+        var multiplier = 0;
+        for(var i=0;i<PP.Score.Repo.length;i++) {
+            multiplier += Math.pow(PP.Score.Repo[i].elapsed, 1.5);
+        }
+        multiplier = Math.pow(multiplier, 1/(1.5));
+        multiplier /= PP.Score.Repo.length;
+        
+        for(var i=0;i<PP.Score.Repo.length;i++) {
+            PP.Score.Repo[i].ScaledScore = PP.Score.Repo[i].RawScore * multiplier;
+        }
+        
+        var swapped;
+        do {
+            swapped = false;
+            for (var i=0; i < PP.Score.Repo.length-1; i++) {
+                if (PP.Score.Repo[i].ScaledScore < PP.Score.Repo[i+1].ScaledScore) {
+                    var temp = PP.Score.Repo[i];
+                    PP.Score.Repo[i] = PP.Score.Repo[i+1];
+                    PP.Score.Repo[i+1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
+        
+        PP.Score.RepoTotal = 0;
+        
+        for(var i=0;i<PP.Score.Repo.length;i++) {
+            PP.Score.Repo[i].Weight = Math.pow(0.95, i);
+            PP.Score.Repo[i].WeightedScore = PP.Score.Repo[i].ScaledScore * PP.Score.Repo[i].Weight;
+            
+            PP.Score.RepoTotal += PP.Score.Repo[i].WeightedScore;
+        }
+        
         callback();
     });
 };
@@ -89,14 +137,15 @@ PP.StartAnalysis = function() {
         $("#resultspanel").slideDown("slow");
 
         PP.FetchUserData(function() {
-            if (PP.Data.User.data.name.length > 0) {
+            if (PP.Data.User.data.name && PP.Data.User.data.name.length > 0) {
                 $("#resultspanel .panel-title").html("Results for <span class='text-success' title='" + PP.User + "'>" + PP.Data.User.data.name + "</span>");
             }
             PP.FetchRepoData(function() {
                 PP.CalculateRepoPP(function() {
-                    var RepoPPTable = "<div class='col-md-7'><ul class='list-group'>";
+                    var RepoPPTable = "<p class='bg-success'>Total gpp from repositories: <b>" + Math.round(PP.Score.RepoTotal) + "gpp</b></p>";
+                    RepoPPTable += "<div class='col-md-7'><ul class='list-group'>";
                     for(var i=0;i<PP.Score.Repo.length;i++) {
-                        RepoPPTable += "<li class='list-group-item'>" + PP.Score.Repo[i].name + " " + PP.Score.Repo[i].commits + "</li>";
+                        RepoPPTable += "<li class='list-group-item'><b>" + PP.Score.Repo[i].name + "</b> " + Math.round(PP.Score.Repo[i].ScaledScore) + "gpp at " + (Math.round(PP.Score.Repo[i].Weight * 10000) / 100) + "% = <b>" + Math.round(PP.Score.Repo[i].WeightedScore) + "gpp</b></li>";
                     }
                     RepoPPTable += "</ul></div>";
                     $("#results").append(RepoPPTable);
