@@ -41,9 +41,18 @@ PP.CalculateRepoPP = function(callback) {
                 var obj = PP.Data.Repo.data[i];
                 var res = {};
                 console.dir(data);
+                
+                var total = 0;
+                var total_authors = data.length;
+                for(var j=0;j<total_authors;j++) {
+                    if (data[j].author.login == PP.User) {
+                        total += data[j].total;
+                        break;
+                    }
+                }
 
                 res.name = obj.name;
-                res.commits = 0;
+                res.commits = total;
 
                 PP.Score.Repo.push(res);
                 // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
