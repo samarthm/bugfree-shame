@@ -28,21 +28,29 @@ PP.FetchRepoData = function(callback) {
 };
 
 PP.CalculateRepoPP = function(callback) {
-    var promises = [];
+    var names = [];
     for(var i=0;i<PP.Data.Repo.data.length;i++) {
-        var obj = PP.Data.Repo.data[i];
-        var res = {};
-        
-        $("#results").append("<p><span class='label label-warning'>WORKING</span> Fetching \"" + PP.Data.Repo.data[i].name + "\" data...</p>");
-        var thing = $.get("https://api.github.com/repos/" + PP.User + "/" + PP.Data.Repo.data[i].name + "/stats/commit_activity?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret, function(data) {
-            
-            res.name = obj.name;
-            res.commits = 0;
+        names.push(PP.Data.Repo.data[i].name);
+    }
+    var promises = [];
+    for(var i=0;i<PP.Data.Repo.data.length;i++) {        
+        // $("#results").append("<p><span class='label label-warning'>WORKING</span> Fetching \"" + PP.Data.Repo.data[i].name + "\" data...</p>");
+        var thing = $.ajax({
+            url: "https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret,
+            success: function(data) {
+                var obj = PP.Data.Repo.data[i];
+                var res = {};
+                console.dir(data);
 
-            PP.Score.Repo.push(res);
-            $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
-            
-        }, "jsonp");
+                res.name = obj.name;
+                res.commits = 0;
+
+                PP.Score.Repo.push(res);
+                // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
+            },
+            dataType: "json",
+            async: false
+        });
         promises.push(thing);
     }
     $.when.apply(null, promises).done(function() {
