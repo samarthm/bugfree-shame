@@ -45,29 +45,34 @@ PP.CalculateRepoPP = function(callback) {
                 } else {
                     var obj = PP.Data.Repo.data[i];
                     var res = {};
-                    console.log("https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret);
-                    console.dir(data);
 
                     var total = 0;
                     var total_authors = data.length;
+                    var author = -1;
                     for(var j=0;j<total_authors;j++) {
                         if (data[j].author.login == PP.User) {
                             total += data[j].total;
+                            author = j;
                             break;
                         }
                     }
+                    
+                    if (!data[j]) {
+                        console.log("https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret);
+                        console.dir(data);
+                    } else {
+                        res.start = parseInt(data[0].weeks[0].w);
 
-                    res.start = parseInt(data[0].weeks[0].w);
+                        var now = (new Date()).getTime()/1000;
+                        res.elapsed = Math.round(now - res.start);
 
-                    var now = (new Date()).getTime()/1000;
-                    res.elapsed = Math.round(now - res.start);
+                        res.name = obj.name;
+                        res.commits = total;
 
-                    res.name = obj.name;
-                    res.commits = total;
+                        res.RawScore = 1.0 * res.commits / res.elapsed;
 
-                    res.RawScore = 1.0 * res.commits / res.elapsed;
-
-                    PP.Score.Repo.push(res);
+                        PP.Score.Repo.push(res);
+                    }
                     // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
                 }
             },
@@ -105,7 +110,7 @@ PP.CalculateRepoPP = function(callback) {
         PP.Score.RepoTotal = 0;
         
         for(var i=0;i<PP.Score.Repo.length;i++) {
-            PP.Score.Repo[i].Weight = Math.pow(0.95, i);
+            PP.Score.Repo[i].Weight = Math.pow(0.92, i);
             PP.Score.Repo[i].WeightedScore = PP.Score.Repo[i].ScaledScore * PP.Score.Repo[i].Weight;
             
             PP.Score.RepoTotal += PP.Score.Repo[i].WeightedScore;
