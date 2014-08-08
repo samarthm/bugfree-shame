@@ -268,6 +268,8 @@ a.tileLink {
 	position:absolute;
 	top:10px;
 	right:10px;
+    background-color:#F00;
+    color:#FFF;
 	cursor:pointer;
 	transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	-o-transition:all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
@@ -282,7 +284,6 @@ a.tileLink {
 }
 
 #app-page #close-btn:hover {
-	background-color:rgba(0,227,255,0.5);
 }
 
 #app-page #close-btn:active {
