@@ -26,11 +26,11 @@ body {
 	top:0px;
 	left:0px;
 	box-sizing:border-box;
-	transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-o-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-ms-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-moz-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-webkit-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 #wrapper * {
@@ -232,11 +232,11 @@ a.tileLink {
 	left:0px;
 	padding:125px;
 	background-color:#FFF;
-	transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-o-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-ms-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-moz-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-	-webkit-transition:all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-webkit-transition:all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 .closed {
