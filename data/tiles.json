@@ -16,5 +16,17 @@
 		"Icon": "",
 		"Color": "#33AA33",
 		"Link": "http://failedxyz.github.io/prime"
+	},
+	{
+		"Name": "Github PP",
+		"Icon": "",
+		"Color": "#6666FF",
+		"Link": "http://failedxyz.github.io/gpp"
+	},
+	{
+		"Name": "EasyCTF",
+		"Icon": "",
+		"Color": "#FF3399",
+		"Link": "http://easyctf.com"
 	}
 ]
