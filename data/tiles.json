@@ -24,9 +24,15 @@
 		"Link": "http://failedxyz.github.io/gpp"
 	},
 	{
-		"Name": "EasyCTF",
+		"Name": "failosu",
 		"Icon": "",
 		"Color": "#FF3399",
+		"Link": "http://projectnebula.org/failosu"
+	},
+	{
+		"Name": "EasyCTF",
+		"Icon": "",
+		"Color": "#33FF99",
 		"Link": "http://easyctf.com"
 	}
 ]
