@@ -126,6 +126,14 @@ PP.CalculateRepoPP = function(callback) {
     });
 };
 
+PP.FetchGistData = function(callback) {
+    callback();
+};
+
+PP.CalculateGistPP = function(callback) {
+    callback();
+};
+
 PP.StartAnalysis = function() {
     PP.Data = {};
     PP.Data.User = {};
@@ -163,6 +171,11 @@ PP.StartAnalysis = function() {
                     RepoPPTable += "</ul></div>";
                     $("#results").append("<p>Total commits: " + PP.RandomData.Commits + "</p>");
                     $("#results").append(RepoPPTable);
+                    
+                    PP.FetchGistData(function() {
+                        PP.CalculateGistPP(function() {
+                        });
+                    });
                 });
             });
         });
