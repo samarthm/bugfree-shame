@@ -134,6 +134,8 @@ PP.StartAnalysis = function() {
 
     PP.Score = {};
     PP.Score.Repo = [];
+    
+    PP.RandomData.Commits = 0;
 
     if ($("#githubusername").val().length <= 0) {
         $("#githubusername").val("failedxyz");
