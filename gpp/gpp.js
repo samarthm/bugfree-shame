@@ -7,6 +7,7 @@ PP.User = "";
 PP.Score = {};
 PP.Score.Repo = [];
 
+PP.RandomData = {};
 PP.RandomData.Commits = 0;
 
 PP.GithubAPI = {};
