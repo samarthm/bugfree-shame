@@ -7,6 +7,8 @@ PP.User = "";
 PP.Score = {};
 PP.Score.Repo = [];
 
+PP.RandomData.Commits = 0;
+
 PP.GithubAPI = {};
 PP.GithubAPI.ClientID = "4d423a457f60a3990290";
 PP.GithubAPI.ClientSecret = "aaf889f63552fb52837a29489764895961ea3d8d";
@@ -68,6 +70,8 @@ PP.CalculateRepoPP = function(callback) {
 
                         res.name = obj.name;
                         res.commits = total;
+                        
+                        PP.RandomData.Commits += total;
 
                         res.RawScore = 1.0 * res.commits / res.elapsed;
 
@@ -153,6 +157,7 @@ PP.StartAnalysis = function() {
                         RepoPPTable += "<li class='list-group-item'><b>" + PP.Score.Repo[i].name + "</b> " + Math.round(PP.Score.Repo[i].ScaledScore) + "gpp at " + (Math.round(PP.Score.Repo[i].Weight * 10000) / 100) + "% = <b>" + Math.round(PP.Score.Repo[i].WeightedScore) + "gpp</b></li>";
                     }
                     RepoPPTable += "</ul></div>";
+                    $("#results").append("<p>Total commits: " + PP.RandomData.Commits + "</p>");
                     $("#results").append(RepoPPTable);
                 });
             });
