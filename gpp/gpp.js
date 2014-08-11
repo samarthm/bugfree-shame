@@ -116,7 +116,7 @@ PP.CalculateRepoPP = function(callback) {
         PP.Score.RepoTotal = 0;
         
         for(var i=0;i<PP.Score.Repo.length;i++) {
-            PP.Score.Repo[i].Weight = Math.pow(0.92, i);
+            PP.Score.Repo[i].Weight = Math.pow(0.975, i);
             PP.Score.Repo[i].WeightedScore = PP.Score.Repo[i].ScaledScore * PP.Score.Repo[i].Weight;
             
             PP.Score.RepoTotal += PP.Score.Repo[i].WeightedScore;
