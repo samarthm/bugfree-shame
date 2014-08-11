@@ -44,7 +44,7 @@ PP.CalculateRepoPP = function(callback) {
             async: false,
             success: function(data) {
                 if (data == undefined) {
-                    console.error("something fucked up with " + PP.Data.Repo.data[i].full_name);
+                    console.error("something fucked up with " + PP.Data.Repo.data[i].full_name + " (empty repository)");
                 } else {
                     var obj = PP.Data.Repo.data[i];
                     var res = {};
@@ -53,15 +53,16 @@ PP.CalculateRepoPP = function(callback) {
                     var total_authors = data.length;
                     var author = -1;
                     for(var j=0;j<total_authors;j++) {
-                        if (data[j].author.login == PP.User) {
+                        // console.log(data[j]);
+                        if (data[j].author.login.toLowerCase() == PP.User.toLowerCase()) {
                             total += data[j].total;
                             author = j;
                             break;
                         }
                     }
                     
-                    if (!data[j]) {
-                        console.log("https://api.github.com/repos/" + PP.Data.Repo.data[i].full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret);
+                    if (!data[author]) {
+                        console.log("https://api.github.com/repos/" + obj.full_name + "/stats/contributors?client_id=" + PP.GithubAPI.ClientID + "&client_secret=" + PP.GithubAPI.ClientSecret);
                         console.dir(data);
                     } else {
                         res.start = parseInt(data[0].weeks[0].w);
@@ -79,13 +80,13 @@ PP.CalculateRepoPP = function(callback) {
                         PP.Score.Repo.push(res);
                     }
                     // $("#results").append("<p><span class='label label-success'>SUCCESS</span> \"" + obj.name + "\" data fetched</p>");
+                    promises.push(thing);
                 }
             },
             error: function() {
-                console.error("something fucked up with " + PP.Data.Repo.data[i].full_name);
+                console.error("something fucked up with " + PP.Data.Repo.data[i].full_name + " (api failure?)");
             },
         });
-        promises.push(thing);
     }
     $.when.apply(null, promises).done(function() {
         var multiplier = 0;
