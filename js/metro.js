@@ -119,6 +119,8 @@ Metro.DisplayTiles = function(callback) {
 		var group = document.createElement("td");
 		
 		var table = document.createElement("table");
+        table.className = "loltable";
+        
 		var trheader = document.createElement("tr");
 		var tdheader = document.createElement("th");
 		tdheader.innerHTML = tile.Name;

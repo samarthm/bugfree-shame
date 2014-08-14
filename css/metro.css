@@ -335,3 +335,7 @@ a.tileLink {
 	-moz-transform:perspective(500px) translateZ(-20px);
 	-webkit-transform:perspective(500px) translateZ(-20px);
 }
+
+.loltable {
+    margin-right:25px;
+}
