@@ -1,19 +1,19 @@
 [
 	{
 		"Name": "About",
-		"Icon": "about.png",
+		"Icon": "about.gif",
 		"Color": "#0066CC",
 		"Link": ""
 	},
 	{
 		"Name": "Languages",
-		"Icon": "",
+		"Icon": "languages.gif",
 		"Color": "#9933CC",
 		"Link": ""
 	},
 	{
 		"Name": "Prime",
-		"Icon": "",
+		"Icon": "prime.gif",
 		"Color": "#33AA33",
 		"Link": "http://failedxyz.github.io/prime"
 	},
