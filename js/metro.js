@@ -224,7 +224,7 @@ Metro.InitializeMetro(function() {
 	$('html, body').bind('touchmove', function(e){
 		e.preventDefault();
 	});
-	$('html, body').bind('scroll', function(e){
+	$('html, body').on('scroll', function(e){
 		e.preventDefault();
 	});
 	$(document).ready(function() {
