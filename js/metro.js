@@ -221,6 +221,12 @@ $("#profile-link, #profile tr td").click(function() {
 
 Metro.InitializeMetro(function() {
 	console.log("Done initializing.");
+	$('html, body').bind('touchmove', function(e){
+		e.preventDefault();
+	});
+	$('html, body').bind('scroll', function(e){
+		e.preventDefault();
+	});
 	$(document).ready(function() {
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
