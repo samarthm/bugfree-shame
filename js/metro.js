@@ -274,11 +274,11 @@ Metro.TypeCode = function() {
 		$("#html").append(Metro.Format(Metro.Code.HTML[ind%Metro.Code.HTML.length]));
 		$("#js").append(Metro.Format(Metro.Code.JS[ind%Metro.Code.JS.length]));
 		$("#css").append(Metro.Format(Metro.Code.CSS[ind%Metro.Code.CSS.length]));
-		$("#html").scrollTop($("#html")[0].scrollHeight);
-		$("#js").scrollTop($("#js")[0].scrollHeight);
-		$("#css").scrollTop($("#css")[0].scrollHeight);
+		$("#html").scrollTop($("#html").prop('scrollHeight'));
+		$("#js").scrollTop($("#js").prop('scrollHeight'));
+		$("#css").scrollTop($("#css").prop('scrollHeight'));
 		ind += 1;
-	}, 50);
+	}, 5);
 };
 
 $("#close-btn").click(function() {
