@@ -349,11 +349,25 @@ a.tileLink {
 	z-index: 52;
 }
 
-#code-view > #html {
-	width: 33%;
+#code-view div {
+	color: rgba(255, 255, 255, 0.1);
+	width: 33.333333333333333333333333333333%;
 	height: 100%;
 	position: fixed;
 	top: 0%;
+}
+
+#code-view #html {
 	left: 0%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#code-view #js {
+	left: 33.333333333333333333333333333333%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#code-view #css {
+	right: 0%;
 	background-color: rgba(0, 0, 0, 0.3);
 }
