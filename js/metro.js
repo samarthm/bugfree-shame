@@ -212,9 +212,20 @@ Metro.ShowTiles = function() {
 	}
 };
 
-Metro.LoadCode = function() {
+Metro.LoadCode = function(callback) {
 	Metro.Code = {};
-	Metro.Code.HTML = document.documentElement.outerHTML;
+	$.ajax({
+		url: "index.html",
+		dataType: "html",
+		data: { },
+		type: "GET",
+		success: function(content) {
+			alert(content);
+		},
+		error: function() {
+			console.log("wtf");
+		}
+	});
 };
 
 $("#close-btn").click(function() {
