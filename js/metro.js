@@ -254,7 +254,13 @@ Metro.LoadCode = function(callback) {
 };
 
 Metro.TypeCode = function() {
-
+	var max = Math.max(Metro.Code.HTML.length, Math.max(Metro.Code.JS.length, Metro.Code.CSS.length));
+	var ind = 0;
+	var intval = setInterval(function() {
+		if (ind < Metro.Code.HTML.length) $("#html").append(Metro.Code.HTML[ind]);
+		ind += 1;
+		if (ind == max) clearInterval(intval);
+	}, 500);
 };
 
 $("#close-btn").click(function() {
