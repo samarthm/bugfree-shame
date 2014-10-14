@@ -263,6 +263,7 @@ Metro.LoadCode = function(callback) {
 Metro.Format = function(input) {
 	var output = input;
 	if (input == "\n") output = "<br />";
+	if (input == "\t") output = "&nbsp;&nbsp;&nbsp;&nbsp;";
 	return output;
 }
 
