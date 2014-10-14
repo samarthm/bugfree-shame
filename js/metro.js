@@ -258,9 +258,11 @@ Metro.TypeCode = function() {
 	var ind = 0;
 	var intval = setInterval(function() {
 		if (ind < Metro.Code.HTML.length) $("#html").append(Metro.Code.HTML[ind]);
+		if (ind < Metro.Code.JS.length) $("#js").append(Metro.Code.JS[ind]);
+		if (ind < Metro.Code.CSS.length) $("#css").append(Metro.Code.CSS[ind]);
 		ind += 1;
 		if (ind == max) clearInterval(intval);
-	}, 500);
+	}, 100);
 };
 
 $("#close-btn").click(function() {
