@@ -355,6 +355,7 @@ a.tileLink {
 	height: 100%;
 	position: fixed;
 	top: 0%;
+	font-family: "Consolas", "Courier", "Monaco", "Lucida Console", monospace;
 }
 
 #code-view #html {
