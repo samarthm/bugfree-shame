@@ -212,6 +212,11 @@ Metro.ShowTiles = function() {
 	}
 };
 
+Metro.LoadCode = function() {
+	Metro.Code = {};
+	Metro.Code.HTML = document.documentElement.outerHTML;
+};
+
 $("#close-btn").click(function() {
 	Metro.CloseApp();
 });
@@ -224,6 +229,7 @@ Metro.InitializeMetro(function() {
 	$(document).ready(function() {
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
+		Metro.LoadCode();
 		console.dir(Metro);
 	});
 });
