@@ -357,7 +357,7 @@ a.tileLink {
 }
 
 #code-view div.code {
-	color: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.2);
 	width: 33.333333333333333333333333333333%;
 	height: 100%;
 	position: fixed;
