@@ -357,6 +357,7 @@ a.tileLink {
 	top: 0%;
 	font-family: "Consolas", "Courier", "Monaco", "Lucida Console", monospace;
 	padding: 15px;
+	word-wrap: none;
 }
 
 #code-view div div.label {
