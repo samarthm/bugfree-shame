@@ -260,13 +260,19 @@ Metro.LoadCode = function(callback) {
 	});
 };
 
+Metro.Format = function(input) {
+	var output = input;
+	if (input == "\n") output = "<br />";
+	return output;
+}
+
 Metro.TypeCode = function() {
 	var max = Math.max(Metro.Code.HTML.length, Math.max(Metro.Code.JS.length, Metro.Code.CSS.length));
 	var ind = 0;
 	var intval = setInterval(function() {
-		if (ind < Metro.Code.HTML.length) $("#html").append(Metro.Code.HTML[ind]);
-		if (ind < Metro.Code.JS.length) $("#js").append(Metro.Code.JS[ind]);
-		if (ind < Metro.Code.CSS.length) $("#css").append(Metro.Code.CSS[ind]);
+		if (ind < Metro.Code.HTML.length) $("#html").append(Metro.Format(Metro.Code.HTML[ind]));
+		if (ind < Metro.Code.JS.length) $("#js").append(Metro.Format(Metro.Code.JS[ind]));
+		if (ind < Metro.Code.CSS.length) $("#css").append(Metro.Format(Metro.Code.CSS[ind]));
 		ind += 1;
 		if (ind == max) clearInterval(intval);
 	}, 100);
