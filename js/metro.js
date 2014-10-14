@@ -275,8 +275,7 @@ Metro.TypeCode = function() {
 		$("#js").append(Metro.Format(Metro.Code.JS[ind%Metro.Code.JS.length]));
 		$("#css").append(Metro.Format(Metro.Code.CSS[ind%Metro.Code.CSS.length]));
 		ind += 1;
-		if (ind == max) clearInterval(intval);
-	}, 100);
+	}, 10);
 };
 
 $("#close-btn").click(function() {
