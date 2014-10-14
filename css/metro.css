@@ -375,6 +375,8 @@ a.tileLink {
 #code-view div.code div.label {
 	width: 100%;
 	position: absolute;
+	top: 0px;
+	padding: 15px;
 	left: 0px;
 	font-size: 72pt;
 	text-align: center;
