@@ -1,3 +1,10 @@
+/* 
+
+Written by Michael Zhang.
+Metro design by Microsoft.
+
+ */
+
 Metro.Tile = function(_Name, _Icon, _Live, _Color) {
 	this.Name = _Name;
 	this.Icon = _Icon;
@@ -212,6 +219,66 @@ Metro.ShowTiles = function() {
 	}
 };
 
+Metro.LoadCode = function(callback) {
+	Metro.Code = {};
+	$.ajax({
+		url: "index.html",
+		dataType: "html",
+		data: { },
+		type: "GET",
+		success: function(content) {
+			Metro.Code.HTML = content;
+			$.ajax({
+				url: "js/metro.js",
+				dataType: "html",
+				data: { },
+				type: "GET",
+				success: function(content) {
+					Metro.Code.JS = content;
+					$.ajax({
+						url: "css/metro.css",
+						dataType: "html",
+						data: { },
+						type: "GET",
+						success: function(content) {
+							Metro.Code.CSS = content;
+							callback();
+						},
+						error: function() {
+							console.log("wtf");
+						}
+					});
+				},
+				error: function() {
+					console.log("wtf");
+				}
+			});
+		},
+		error: function() {
+			console.log("wtf");
+		}
+	});
+};
+
+Metro.Format = function(input) {
+	var output = input;
+	if (input == "\n") output = "<br />";
+	if (input == "\t") output = "&nbsp;&nbsp;&nbsp;&nbsp;";
+	return output;
+}
+
+Metro.TypeCode = function() {
+	var max = Math.max(Metro.Code.HTML.length, Math.max(Metro.Code.JS.length, Metro.Code.CSS.length));
+	var ind = 0;
+	var intval = setInterval(function() {
+		$("#html").append(Metro.Format(Metro.Code.HTML[ind%Metro.Code.HTML.length]));
+		$("#js").append(Metro.Format(Metro.Code.JS[ind%Metro.Code.JS.length]));
+		$("#css").append(Metro.Format(Metro.Code.CSS[ind%Metro.Code.CSS.length]));
+
+		ind += 1;
+	}, 50);
+};
+
 $("#close-btn").click(function() {
 	Metro.CloseApp();
 });
@@ -230,6 +297,9 @@ Metro.InitializeMetro(function() {
 	$(document).ready(function() {
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
+		Metro.LoadCode(function() {
+			Metro.TypeCode();
+		});
 		console.dir(Metro);
 	});
 });

@@ -1,3 +1,10 @@
+/* 
+
+Written by Michael Zhang.
+Metro design by Microsoft.
+
+ */
+
 @import url(fonts.css);
 
 * {
@@ -338,4 +345,47 @@ a.tileLink {
 
 .loltable {
     margin-right:45px;
+}
+
+#code-view {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 52;
+}
+
+#code-view div {
+	color: rgba(255, 255, 255, 0.1);
+	width: 33.333333333333333333333333333333%;
+	height: 100%;
+	position: fixed;
+	top: 0%;
+	font-family: "Consolas", "Courier", "Monaco", "Lucida Console", monospace;
+	padding: 15px;
+	word-wrap: none;
+}
+
+#code-view div div.label {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	font-size: 72pt;
+	text-align: center;
+}
+
+#code-view #html {
+	left: 0%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#code-view #js {
+	left: 33.333333333333333333333333333333%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#code-view #css {
+	right: 0%;
+	background-color: rgba(0, 0, 0, 0.3);
 }
