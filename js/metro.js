@@ -1,9 +1,9 @@
-/*
+/* 
 
 Written by Michael Zhang.
 Metro design by Microsoft.
 
-*/
+ */
 
 Metro.Tile = function(_Name, _Icon, _Live, _Color) {
 	this.Name = _Name;
