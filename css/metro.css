@@ -356,7 +356,7 @@ a.tileLink {
 	z-index: 52;
 }
 
-#code-view div {
+#code-view div.code {
 	color: rgba(255, 255, 255, 0.1);
 	width: 33.333333333333333333333333333333%;
 	height: 100%;
@@ -365,9 +365,14 @@ a.tileLink {
 	font-family: "Consolas", "Courier", "Monaco", "Lucida Console", monospace;
 	padding: 15px;
 	word-wrap: none;
+	overflow: -moz-scrollbars-none;
 }
 
-#code-view div div.label {
+#code-view div.code::-webkit-scrollbar { 
+    display: none; 
+}
+
+#code-view div.code div.label {
 	width: 100%;
 	position: absolute;
 	left: 0px;
