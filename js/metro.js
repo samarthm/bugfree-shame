@@ -278,7 +278,7 @@ Metro.TypeCode = function() {
 		$("#js").scrollTop($("#js").prop('scrollHeight'));
 		$("#css").scrollTop($("#css").prop('scrollHeight'));
 		ind += 1;
-	}, 5);
+	}, 50);
 };
 
 $("#close-btn").click(function() {
