@@ -359,6 +359,14 @@ a.tileLink {
 	padding: 15px;
 }
 
+#code-view div div.label {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	font-size: 72pt;
+	text-align: center;
+}
+
 #code-view #html {
 	left: 0%;
 	background-color: rgba(0, 0, 0, 0.3);
