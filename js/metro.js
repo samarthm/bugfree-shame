@@ -271,9 +271,9 @@ Metro.TypeCode = function() {
 	var max = Math.max(Metro.Code.HTML.length, Math.max(Metro.Code.JS.length, Metro.Code.CSS.length));
 	var ind = 0;
 	var intval = setInterval(function() {
-		if (ind < Metro.Code.HTML.length) $("#html").append(Metro.Format(Metro.Code.HTML[ind]));
-		if (ind < Metro.Code.JS.length) $("#js").append(Metro.Format(Metro.Code.JS[ind]));
-		if (ind < Metro.Code.CSS.length) $("#css").append(Metro.Format(Metro.Code.CSS[ind]));
+		$("#html").append(Metro.Format(Metro.Code.HTML[ind%Metro.Code.HTML.length]));
+		$("#js").append(Metro.Format(Metro.Code.JS[ind%Metro.Code.JS.length]));
+		$("#css").append(Metro.Format(Metro.Code.CSS[ind%Metro.Code.CSS.length]));
 		ind += 1;
 		if (ind == max) clearInterval(intval);
 	}, 100);
