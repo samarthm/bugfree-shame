@@ -220,12 +220,41 @@ Metro.LoadCode = function(callback) {
 		data: { },
 		type: "GET",
 		success: function(content) {
-			alert(content);
+			Metro.Code.HTML = content;
+			$.ajax({
+				url: "js/metro.js",
+				dataType: "html",
+				data: { },
+				type: "GET",
+				success: function(content) {
+					Metro.Code.JS = content;
+					$.ajax({
+						url: "css/metro.css",
+						dataType: "html",
+						data: { },
+						type: "GET",
+						success: function(content) {
+							Metro.Code.CSS = content;
+							callback();
+						},
+						error: function() {
+							console.log("wtf");
+						}
+					});
+				},
+				error: function() {
+					console.log("wtf");
+				}
+			});
 		},
 		error: function() {
 			console.log("wtf");
 		}
 	});
+};
+
+Metro.TypeCode = function() {
+
 };
 
 $("#close-btn").click(function() {
@@ -240,7 +269,9 @@ Metro.InitializeMetro(function() {
 	$(document).ready(function() {
 		Metro.FadeInFromBlack();
 		Metro.ShowTiles();
-		Metro.LoadCode();
+		Metro.LoadCode(function() {
+			Metro.TypeCode();
+		});
 		console.dir(Metro);
 	});
 });
