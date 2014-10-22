@@ -1,0 +1,12 @@
+<script type="text/javascript" src="jquery.js"></script>
+<div id="result"></div>
+<script>
+$.ajax({
+	url: "https://wildwildweb.fluxfingers.net:1422",
+	method: "POST",
+	dataType: "html",
+	success: function(content) {
+		$("#result").html(content);
+	},
+});
+</script>
