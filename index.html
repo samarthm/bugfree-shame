@@ -1,0 +1,36 @@
+<!--
+
+	Made by Michael Zhang.
+
+-->
+
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Michael Zhang (@failedxyz)</title>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<div class="scroll_this">
+			<section>
+				<h1>Michael Zhang</h1>
+			</section>
+			<section>
+				<h2>I make websites. And stuff</h2>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+		<script type="text/javascript">
+			$(".scroll_this").onepage_scroll({
+				sectionContainer: "section",
+				easing: "ease-out",
+
+				pagination: false,
+				loop: false,
+				keyboard: true,
+				direction: "vertical"
+			});
+		</script>
+	</body>
+</html>
