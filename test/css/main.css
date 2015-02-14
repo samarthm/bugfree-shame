@@ -79,3 +79,14 @@ hr.bottom {
 	font-family: "Abel";
 	font-size: 1.0em;
 }
+
+.avatar {
+	background-image: url(http://gravatar.com/avatar/9457ee88234e52587d1113f78c472e21?size=512);
+	background-size: cover;
+	border-radius: 5.0em;
+	-moz-border-radius: 5.0em;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+	margin: auto;
+	width: 5.0em;
+	height: 5.0em;
+}
