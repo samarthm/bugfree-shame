@@ -118,6 +118,10 @@ footer {
 	margin-bottom: 32%;
 }
 
+.testimonials .text-center {
+	min-height: 425px;
+}
+
 .testimonials .client {
 	display: block;
 	margin: 10px auto 18px auto;
