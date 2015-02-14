@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,700);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,700|Abel);
 @import url(bootstrap.min.css);
 
 * {
@@ -72,4 +72,10 @@ hr.bottom {
 
 .actual-title {
 	font-size: 3.0em;
+}
+
+.main-screen-thingy .content-container .immediate-child a.btn {
+	color: #FFF;
+	font-family: "Abel";
+	font-size: 1.0em;
 }
