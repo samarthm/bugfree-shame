@@ -120,12 +120,13 @@ footer {
 
 .testimonials .client {
 	display: block;
-	margin: 10px auto;
+	margin: 10px auto 18px auto;
 	-webkit-border-radius: 45px;
 	-moz-border-radius: 45px;
 	border-radius: 45px;
 	height:200px;
 	background-size: contain;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .profile {
@@ -146,6 +147,7 @@ footer {
 	color: #b3b7b9;
 	line-height: 17px;
 	font-size: 15px;
+	margin-top: 9px;
 }
 
 .testimonials .underline {
