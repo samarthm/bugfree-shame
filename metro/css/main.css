@@ -1,0 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+body {
+  background-color: #E6E6E6;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}

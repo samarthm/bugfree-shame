@@ -1,13 +1,185 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-body {
-  background-color: #E6E6E6;
-  margin: 0px;
-  padding: 0px;
-  font-size: 1.3em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,700|Abel);
+@import url(bootstrap.min.css);
+
 * {
-  font-family: "Lato", Arial, Helvetica, sans-serif;
+	font-family: "Dosis", sans-serif;
+}
+
+html, body {
+	height: 100%;
+	margin: none;
+}
+
+.fullscreen {
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+}
+
+.background {
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-position: 50% 50%\9 !important;
+}
+
+hr {
+	margin: 9% 0;
+	border: none;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.06), rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.06), rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.06), rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.06), rgba(0,0,0,0));
+	clear: both;
+}
+
+hr.small {
+	margin: 3% 0;
+}
+
+hr.medium {
+	margin: 5% 0;
+}
+
+hr.top {
+	margin: 9% 0 5% 0;
+}
+
+hr.bottom {
+	margin: 5% 0 9% 0;
+}
+
+.main-screen-thingy {
+	color: #FFF;
+}
+
+.main-screen-thingy .content-container {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.main-screen-thingy .content-container .immediate-child {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.center {
+	text-align: center;
+}
+
+.actual-title {
+	font-size: 3.0em;
+}
+
+.main-screen-thingy .content-container .immediate-child a.btn {
+	color: #FFF;
+	font-family: "Abel";
+	font-size: 1.0em;
+}
+
+.avatar {
+	background-image: url(http://gravatar.com/avatar/9457ee88234e52587d1113f78c472e21?size=512);
+	background-size: cover;
+	border-radius: 5.0em;
+	-moz-border-radius: 5.0em;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+	margin: auto;
+	width: 5.0em;
+	height: 5.0em;
+}
+
+.stuff {
+	font-size: 1.5em;
+}
+
+.main-screen-thingy, footer {
+	background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/stevenson.jpg);
+	background-attachment: fixed;
+	background-position: center top;
+	background-size: cover;
+}
+
+footer {
+	height: 130px;
+	margin-top: 120px;
+	font-size: 1.5em;
+	text-align: center;
+	color: #FFF;
+	background-color: #000;
+	line-height: 130px;
+}
+
+.testimonials {
+	margin-top: 6%;
+	margin-bottom: 32%;
+}
+
+.testimonials .text-center {
+	min-height: 425px;
+}
+
+.testimonials .client {
+	display: block;
+	margin: 10px auto 18px auto;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	height:200px;
+	background-size: contain;
+	/* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8); */
+}
+
+.profile {
+	display: table;
+	margin: 0 auto;
+	height: 150px;
+	width: 150px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow: 0 0 18px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 18px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 18px rgba(0, 0, 0, .8);
+}
+
+.testimonials .client-company {
+	display: block;
+	color: #b3b7b9;
+	line-height: 17px;
+	font-size: 15px;
+	margin-top: 9px;
+}
+
+.testimonials .underline {
+	display: block;
+	margin: 17px auto;
+	width: 50px;
+	height: 1px;
+	background: #b3b7b9;
+}
+
+@media screen and (max-width: 991px) {
+	.testimonials p {
+		margin-bottom: 60px;
+	}
+
+	.testimonials div:last-child p {
+		margin-bottom: 20px;
+	};
+}
+
+.testimonials p:before {
+	content: "\201C";
+	color: #fe4444;
+	font-size: 20px;
+}
+
+.testimonials p:after {
+	content: "\201D";
+	color: #fe4444;
+	font-size: 20px;
 }
