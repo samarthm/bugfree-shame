@@ -1,1 +1,1 @@
-document.write("We are the Donut Mafia.");
+location.href = "http://donutmafia.co";
