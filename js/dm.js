@@ -1,1 +1,1 @@
-console.dir("lol");
+alert("hasidfoshiohqpeihtiqewhtpiqwhetpoqih");
