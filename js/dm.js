@@ -1,1 +1,1 @@
-location.href = "http://donutmafia.co";
+document.getElementByTagName("body").innerHTML = "HEI";
