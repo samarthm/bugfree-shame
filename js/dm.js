@@ -9,7 +9,7 @@ function get(url) {
 			// This is called even on 404 etc
 			// so check the status
 			if (req.status == 200) {
-				// Resolve the promise with the response text
+				console.log("done");
 				resolve(req.response);
 			} else {
 				// Otherwise reject with the status text
