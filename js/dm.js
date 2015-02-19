@@ -12,6 +12,7 @@ function get(url) {
 		};
 		req.onerror = function() {
 			reject(Error("Network Error"));
+			console.log("error");
 		};
 		req.send();
 	});
