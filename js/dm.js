@@ -1,1 +1,1 @@
-location.href = "http://donutmafia.co";
+console.dir("yo");
