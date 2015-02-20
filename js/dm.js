@@ -1,1 +1,1 @@
-document.getElementsByTagName("body")[0].style.background = "";
+console.log("This is a test.");
