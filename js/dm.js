@@ -30,7 +30,7 @@ loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	
-	jQuery.getJSON("http://api.ipify.org?format=json", function(data) {
+	jQuery.getJSON("https://api.ipify.org?format=json", function(data) {
 		console.log(data);
 	});
 	/*
