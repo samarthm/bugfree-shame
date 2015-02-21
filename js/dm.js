@@ -30,10 +30,9 @@ loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", "http://api.ipify.org?format=json", false );
-	xmlHttp.send( null );
-	console.log(xmlHttp.responseText);
+	jQuery.getJSON("http://api.ipify.org?format=json", function(data) {
+		console.log(data);
+	});
 	/*
 	testObject.save({
 		ip: xmlHttp.responseText
