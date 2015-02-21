@@ -29,9 +29,13 @@ loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 	Parse.initialize("VvDd6NlfRFl1OabXJuCUOSc3wXWPCyKPIeOB2Q3G", "mF1dRsUvFuesztncj6vre4FGgaxvuGogLPLcYudb");
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
-	/* testObject.save({
-		
+	
+	xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", "http://api.ipify.org?format=json", false );
+	xmlHttp.send( null );
+	testObject.save({
+		ip: xmlHttp.responseText
 	}).then(function(object) {
 		console.log("Saved.");
-	}); */
+	});
 });
