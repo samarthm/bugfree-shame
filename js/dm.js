@@ -1,3 +1,18 @@
-var amount = Math.random() * 1000000 + 1000000;
-document.getElementById("goalStats").children[0].children[3].innerHTML = "$" + (Math.round(amount * 100) / 100);
-document.getElementById("goalStats").children[0].children[4].children[1].innerHTML = '&infin; <span style="text-transform:lowercase;">of</span> 28';
+document.write("We are the Donut Mafia.");
+
+function loadScript(url, callback)
+{
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = url;
+	
+	script.onreadystatechange = callback;
+	script.onload = callback;
+	
+	head.appendChild(script);
+}
+
+loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
+	console.log("loaded.");
+});
