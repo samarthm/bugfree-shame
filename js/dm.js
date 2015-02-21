@@ -13,12 +13,25 @@ function loadScript(url, callback)
 	head.appendChild(script);
 }
 
+function getCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') c = c.substring(1);
+		if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+	}
+	return "";
+}
+
 loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 	console.log("Loaded.");
 	Parse.initialize("VvDd6NlfRFl1OabXJuCUOSc3wXWPCyKPIeOB2Q3G", "mF1dRsUvFuesztncj6vre4FGgaxvuGogLPLcYudb");
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
-	testObject.save({foo: "bar"}).then(function(object) {
+	/* testObject.save({
+		
+	}).then(function(object) {
 		console.log("Saved.");
-	});
+	}); */
 });
