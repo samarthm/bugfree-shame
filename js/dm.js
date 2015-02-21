@@ -31,12 +31,11 @@ loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 	var testObject = new TestObject();
 	
 	jQuery.getJSON("https://api.ipify.org?format=json", function(data) {
-		console.log(data);
+		// console.log(data);
+		testObject.save({
+			ip: data.ip
+		}).then(function(object) {
+			console.log("Saved.");
+		});
 	});
-	/*
-	testObject.save({
-		ip: xmlHttp.responseText
-	}).then(function(object) {
-		console.log("Saved.");
-	});*/
 });
