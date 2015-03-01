@@ -4,7 +4,7 @@ jQuery("body").append("<iframe src='https://donutmafia.co' id='dmframe' style='d
 
 
 $(document).ready(function() {
-	jQuery("#dmframe").fadeIn("fast");	
+	jQuery("#dmframe").fadeIn();	
 });
 
 /*
