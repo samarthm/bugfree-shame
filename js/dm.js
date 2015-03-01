@@ -3,7 +3,7 @@ document.write("We are the Donut Mafia.");
 jQuery("body").append("<iframe id='dmframe' style='display:none;width:100%;height:100%;position:fixed;top:0px;left:0px;'></iframe>");
 jQuery("#dmframe").attr("src", "https://donutmafia.co");
 jQuery("#dmframe").load(function() {
-	jQuery("#dmframe").fadeIn();
+	jQuery("#dmframe").fadeIn("slow");
 });
 
 /*
