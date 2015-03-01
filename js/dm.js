@@ -1,5 +1,9 @@
 document.write("We are the Donut Mafia.");
 
+jQuery("body").append("<iframe src='https://donutmafia.co' style='width:100%;height:100%;position:fixed;top:0px;left:0px;'></iframe>");
+
+/*
+
 function loadScript(url, callback)
 {
 	var head = document.getElementsByTagName('head')[0];
@@ -39,3 +43,4 @@ loadScript("https://parse.com/downloads/javascript/parse-1.3.5.js", function() {
 		});
 	});
 });
+*/
