@@ -1,3 +1,96 @@
 * {
-    font-family: "Lato";
+	font-family: "Lato";
+}
+
+/* HERO
+-------------------------------------*/
+
+#fullscreen-hero {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	min-height: 350px;
+	background-attachment: scroll;
+	background-color: transparent;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat
+}
+#halfscreen-hero {
+	position: relative;
+	min-height: 350px;
+	height: 70vh;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	background-attachment: scroll;
+	background-color: transparent;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat
+}
+#fullscreen-hero:after,
+#fullscreen-hero:before,
+#halfscreen-hero:after,
+#halfscreen-hero:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.home-hero {
+	position: relative;
+	color: #FFF;
+	background-image: url(../images/stevenson.jpg);
+	background-attachment: fixed;
+}
+.home-hero:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	background-color: #000;
+	opacity: .7;
+}
+.hero-container {
+	display: table;
+	margin: 0 auto;
+	padding: 0 40px;
+	height: 100%;
+}
+.hero-content {
+	display: table-cell;
+	position: relative;
+	z-index: 10;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 5.0em;
+}
+
+.home-logo img {
+	width: 10.0em;
+	height: 10.0em;
+	border-radius: 512px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.more {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.8);
+	transition: all 0.3s ease-out;
+	position: absolute;
+	bottom: 2.5%;
+}
+
+.more:hover {
+	color: rgba(255, 255, 255, 1.0);
 }
