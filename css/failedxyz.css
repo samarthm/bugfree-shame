@@ -1,96 +1,119 @@
 * {
 	font-family: "Lato";
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
-/* HERO
--------------------------------------*/
-
-#fullscreen-hero {
-	height: 100vh;
-	position: relative;
-	text-align: center;
-	width: 100%;
-	min-height: 350px;
-	background-attachment: scroll;
-	background-color: transparent;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat
+body {
+	background-color: #FFF;
+	padding: 0;
+	margin: 0;
 }
-#halfscreen-hero {
-	position: relative;
-	min-height: 350px;
-	height: 70vh;
+
+/* GENERIC
+---------------------- */
+
+.hero {
 	width: 100%;
-	overflow: hidden;
+	position: relative;
 	text-align: center;
 	background-attachment: scroll;
 	background-color: transparent;
 	background-size: cover;
 	background-position: center center;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
 }
-#fullscreen-hero:after,
-#fullscreen-hero:before,
-#halfscreen-hero:after,
-#halfscreen-hero:before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-.home-hero {
-	position: relative;
-	color: #FFF;
-	background-image: url(../images/stevenson.jpg);
-	background-attachment: fixed;
-}
-.home-hero:before {
+
+.hero:before, .hero:after {
 	content: "";
-	display: block;
 	position: absolute;
-	top: 0;
-	right: 0;
 	bottom: 0;
-	left: 0;
-	pointer-events: none;
-	background-color: #000;
-	opacity: .7;
+	width: 100%;
 }
-.hero-container {
+
+.full.hero {
+	height: 100vh;
+}
+
+.hero .hero-container {
 	display: table;
-	margin: 0 auto;
-	padding: 0 40px;
+	margin: 0;
 	height: 100%;
 }
-.hero-content {
-	display: table-cell;
-	position: relative;
-	z-index: 10;
+
+.hero .hero-container .content {
 	text-align: center;
+	display: table-cell;
 	vertical-align: middle;
 }
 
-.title {
-	font-weight: 400;
+.container {
+	display: block;
+	max-width: 960px;
+	padding: 30px 30px;
+	margin: 20px auto;
+}
+
+/* SPECIFIC
+---------------------- */
+
+#home-hero {
+	top: 0;
+	left: 0;
+	background-image: url(/images/stevenson.jpg);
+}
+
+#home-hero .hero-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.75);
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#home-hero .hero-container .content {
+	z-index: 10;
+	color: #FFF;
+}
+
+#avatar {
+	background-image: url(//gravatar.com/avatar/9457ee88234e52587d1113f78c472e21?size=512);
+	background-size: cover;
+	border-radius: 10.0em;
+	width: 10.0em;
+	height: 10.0em;
+	margin: auto;
+}
+
+#home-hero .hero-container .content .header {
+	margin: 0.2em;
+}
+
+#home-title {
 	font-size: 5.0em;
 }
 
-.home-logo img {
-	width: 10.0em;
-	height: 10.0em;
-	border-radius: 512px;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+#home-hero .home-subtitle {
+	font-size: 2.0em;
+	font-weight: 400;
 }
 
-.more {
+#home-hero .home-subtitle a {
+	color: #FFF;
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.8);
-	transition: all 0.3s ease-out;
+}
+
+#home-hero .hero-container .content .see_more {
+	text-align: center;
+	width: 100%;
+	font-size: 1.5em;
 	position: absolute;
 	bottom: 2.5%;
-}
-
-.more:hover {
-	color: rgba(255, 255, 255, 1.0);
+	left: 0;
+	
+	color: #FFF;
+	text-decoration: none;
 }

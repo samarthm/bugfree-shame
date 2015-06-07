@@ -1,92 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Michael Zhang (@failedxyz)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Lato:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  
-  <link rel="stylesheet" href="css/failedxyz.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-</head>
-<body>
-
-	<div id="fullscreen-hero" class="home-hero">
-		<div class="hero-container">
-			<div class="hero-content">
-				<p><a class="home-logo" href="/"><img src="//gravatar.com/avatar/9457ee88234e52587d1113f78c472e21?size=512"></a></p>
-				<h1 class="title">
-					<span>Michael Zhang</span><br>
-				</h1>
-				<a class="more" href="#me">
-					More<br>
-					<i class="fa fa-chevron-down"></i>
-				</a>
-			</div>
-		</div>
-	</div>
+	<head>
+		<meta charset="utf-8">
+		<title>Michael Zhang</title>
+		<meta name="author" content="Michael Zhang">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link href="//fonts.googleapis.com/css?family=Lato:400,300,600" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/css/failedxyz.css" />
+		<link rel="stylesheet" href="/css/font-awesome.min.css" />
+		<link rel="icon" href="//gravatar.com/avatar/9457ee88234e52587d1113f78c472e21?size=512" />
+		
+		<script src="js/smooth-scroll.min.js"></script>
+	</head>
 	
-	<section id="me">
-		<div class="container">
-			<div class="row">
-				<div class="eight columns offset-by-two columns">
-					<p class="intro black">My Experience</p>
-					<p class="statement gunmetal">I've got chops in all phases of the design process.
-				</div>
-			</div>
-			<div class="row">
-				<div class="one-third column">
-					<div class="expertise-block">
-						<i class="fa fa-diamond purple"></i>
-						<h4 class="title black">Ideas</h4>
-						<p class="summary">
-							I collaborate with clients and peers to nurture and transform ideas into well thought out design specs. After all, that's where the majority of amazing user experiences start.
-						</p>
-					</div>
-				</div>
-				<div class="one-third column">
-					<div class="expertise-block">
-						<i class="fa fa-magic purple"></i>
-						<h4 class="title black">UX/UI</h4>
-						<p class="summary">
-							I sketch and wireframe interfaces focusing on content structure, intuitive UI patterns and simple interactions. I'm a minimalist who truly believes that less is more.
-						</p>
-					</div>
-				</div>
-				<div class="one-third column">
-					<div class="expertise-block">
-						<i class="fa fa-code purple"></i>
-						<h4 class="title black">Code</h4>
-						<p class="summary">
-							I design in the browser with HTML(5), CSS(3) and a touch of jQuery. I love coding things from scratch, but I can work with front-end frameworks like Bootstrap too.
-						</p>
-					</div>
+	<body>
+		<div class="full hero" id="home-hero">
+			<div class="hero-container">
+				<div class="content">
+					<p>
+						<div id="avatar"></div>
+					</p>
+					<h1 id="home-title" class="header">Michael Zhang</h1>
+					<h3 class="home-subtitle header">
+						Student, Artist, <i>Hacker</i>.
+					</h3>
+					<p>&nbsp;</p><p>&nbsp;</p>
+					<p class="home-subtitle header">
+						<a href="mailto:failed.down@gmail.com" class="btn">EMAIL</a>
+						&bull;
+						<a href="http://github.com/failedxyz" target="_blank" class="btn">GITHUB</a>
+						&bull;
+						<a href="http://linkedin.com/in/failedxyz" target="_blank" class="btn">LINKEDIN</a>
+					</p><p>&nbsp;</p>
+					
+					<a class="see_more" data-scroll href="#me">
+						See what I do<br />
+						<i class="fa fa-chevron-down"></i>
+					</a>
 				</div>
 			</div>
 		</div>
-	</section>
-
-</body>
+		
+		<a id="me"></a>
+		<div class="container">
+			<center><h2>
+				Hi. I'm Michael, and I like to build cool things.
+			</h2></center>
+		</div>
+		
+		<div class="container">
+			<h2>Who am I?</h2>
+			<p>
+				I'm a junior at Adlai E. Stevenson High School, and I love programming! Besides working on cool projects, I also enjoy listening to music, as well as playing Capture-the-Flag competitions!
+			</p>
+		</div>
+		
+		<script>
+			smoothScroll.init({
+				speed: 1000,
+				easing: 'easeOutCubic',
+				updateURL: false
+			});
+		</script>
+	</body>
 </html>
