@@ -93,8 +93,7 @@ body {
 	left: 0;
 	background-image: url(/images/background.jpg);
 	background-attachment: fixed;
-	background-position: 0, 0;
-	background-size: 100%, 100%;
+	background-size: cover;
 }
 
 #home-hero .hero-container {
@@ -156,8 +155,8 @@ body {
 	text-align: center;
 	background-image: url(/images/background.jpg);
 	background-attachment: fixed;
+	background-size: cover;
 	background-position: 0, 0;
-	background-size: 100%, 100%;
 	
 	display: block;
 	padding: 120px 30px;
