@@ -165,6 +165,7 @@ body {
 	margin-bottom: 0;
 	color: null;
 	position: relative;
+	width: 960px;
 }
 
 #footer #overlay {
