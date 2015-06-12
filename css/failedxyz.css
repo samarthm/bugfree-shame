@@ -163,7 +163,7 @@ body {
 	padding: 120px 30px;
 	margin: 00px auto;
 	margin-bottom: 0;
-	color: #FFF;
+	color: null;
 	position: relative;
 }
 
@@ -176,7 +176,7 @@ body {
 	
 	padding: 120px 30px;
 	font-size: 1.5em;
-	background-color: rgba(0, 0, 0, 0.25);
+	background-color: rgba(0, 0, 0, 0);
 	
 	
 }
