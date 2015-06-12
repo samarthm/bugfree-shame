@@ -1,2 +1,2 @@
 # yeaaa
-#Credit: failedxyz
+#Shoutout: failedxyz
