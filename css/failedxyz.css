@@ -178,6 +178,6 @@ body {
 	padding: 120px 30px;
 	font-size: 1.5em;
 	background-color: rgba(0, 0, 0, 0);
-	
+	box-sizing: border-box;
 	
 }
